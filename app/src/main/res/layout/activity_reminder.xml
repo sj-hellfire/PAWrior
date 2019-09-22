@@ -8,19 +8,70 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="80dp">
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_time"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
         android:layout_centerInParent="true"
         app:cardCornerRadius="18dp"
         android:layout_margin="12dp"
+        android:layout_above="@+id/card_2"
         app:cardElevation="2dp">
         <LinearLayout
             android:gravity="center"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+            <ImageView
+                android:src="@drawable/ic_order"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:id="@+id/activity_image_1"
+                />
+            <TextView
+                android:text="10:30, 22 Sept 2019"
+                android:id="@+id/activity_time_1"
+                android:gravity="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"/>
+            <TextView
+                android:text="Feed your dog Breakfast"
+                android:gravity="center"
+                android:id="@+id/activity_description_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_centerInParent="true"
+        app:cardCornerRadius="18dp"
+        android:layout_margin="12dp"
+        android:id="@+id/card_2"
+        app:cardElevation="2dp">
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:id="@+id/activity_image"
                 />
             <TextView
@@ -29,13 +80,49 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="24sp"
-                android:layout_margin="16dp"/>
+                android:textSize="24sp"/>
             <TextView
+                android:gravity="center"
                 android:id="@+id/activity_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="24sp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_centerInParent="true"
+        app:cardCornerRadius="18dp"
+        android:layout_margin="12dp"
+        android:layout_below="@+id/card_2"
+        app:cardElevation="2dp">
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:id="@+id/activity_image_3"
+                android:src="@drawable/ic_toilet"
+                />
+            <TextView
+                android:id="@+id/activity_time_3"
+                android:gravity="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="21sp"
+                android:text="15:30, 22 Sept 2019" />
+            <TextView
+                android:text="Take your dog out for potty"
+                android:gravity="center"
+                android:id="@+id/activity_description_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="21sp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

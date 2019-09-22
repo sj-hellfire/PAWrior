@@ -8,10 +8,12 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import com.example.pawrior.auth.LoginActivity;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.FirebaseApp;
 
 public class MainActivity extends AppCompatActivity {
@@ -71,6 +73,25 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this,MedicalHistory.class));
             }
         });
-
+        initInstances();
     }
+
+    NavigationView navigation;
+
+    private void initInstances() {
+        navigation = findViewById(R.id.navigation_view);
+        navigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                int id = menuItem.getItemId();
+                switch (id) {
+                    case R.id.vet_locator:
+                        startActivity(new Intent(MainActivity.this, LocateVeterinary.class));
+                        break;
+                }
+                return false;
+            }
+        });
+    }
+
 }
