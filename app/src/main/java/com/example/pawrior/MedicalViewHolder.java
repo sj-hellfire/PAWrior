@@ -26,7 +26,7 @@ class MedicalViewHolder extends RecyclerView.ViewHolder{
         clinicName.setText(parts.getClinicName());
         diagnosis.setText(parts.getDiagnosis());
         symptoms.setText(parts.getSymptoms());
-        medicinies.setText(parts.getMedicinies());
+        medicinies.setText(parts.getMedicines());
         nextConsultation.setText(parts.getNextConsultation());
         visitDate.setText(parts.getVisitDate());
     }

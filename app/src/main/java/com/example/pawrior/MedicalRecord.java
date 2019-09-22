@@ -1,14 +1,14 @@
 package com.example.pawrior;
 
 public class MedicalRecord {
-    String doctorName, clinicName, diagnosis, symptoms, medicinies, nextConsultation, visitDate;
+    String doctorName, clinicName, diagnosis, symptoms, medicines, nextConsultation, visitDate;
 
-    public MedicalRecord(String doctorName, String clinicName, String diagnosis, String symptoms, String medicinies, String nextConsultation, String visitDate) {
+    public MedicalRecord(String doctorName, String clinicName, String diagnosis, String symptoms, String medicines, String nextConsultation, String visitDate) {
         this.doctorName = doctorName;
         this.clinicName = clinicName;
         this.diagnosis = diagnosis;
         this.symptoms = symptoms;
-        this.medicinies = medicinies;
+        this.medicines = medicines;
         this.nextConsultation = nextConsultation;
         this.visitDate = visitDate;
     }
@@ -45,12 +45,12 @@ public class MedicalRecord {
         this.symptoms = symptoms;
     }
 
-    public String getMedicinies() {
-        return medicinies;
+    public String getMedicines() {
+        return medicines;
     }
 
-    public void setMedicinies(String medicinies) {
-        this.medicinies = medicinies;
+    public void setMedicines(String medicines) {
+        this.medicines = medicines;
     }
 
     public String getNextConsultation() {

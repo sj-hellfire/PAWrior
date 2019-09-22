@@ -2,6 +2,7 @@ package com.example.pawrior;
 
 import android.os.Bundle;
 
+import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -38,6 +39,10 @@ public class Main2Activity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
+        TextView nameTitle = findViewById(R.id.dogName);
+        String name = Pawrior.myDog.getDogFirstName();
+        nameTitle.setText(name);
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

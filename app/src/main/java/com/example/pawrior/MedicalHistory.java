@@ -1,10 +1,13 @@
 package com.example.pawrior;
 
+import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +15,7 @@ import java.util.List;
 public class MedicalHistory extends AppCompatActivity {
     RecyclerView recyclerView;
     MedicalAdapter medicalAdapter;
+    FloatingActionButton fab;
     List<MedicalRecord> medicalRecords = new ArrayList<>();
     String[] doctorName = {" Dr. Susan Banks", " Dr.Maria Hill"};
     String[] clinicName = {" ABC Friendly Clinic", " American Kennel Clinic"};
@@ -25,6 +29,7 @@ public class MedicalHistory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medical_history);
         recyclerView = findViewById(R.id.recycler_view);
+        fab = findViewById(R.id.plus_btn2);
         for(int i=0;i<2;i++){
             medicalRecords.add(new MedicalRecord(
                     doctorName[i],
@@ -36,6 +41,18 @@ public class MedicalHistory extends AppCompatActivity {
                     visitDate[i]
             ));
         }
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setAlarm(2019, 9, 22, 11,20);
+                taskImage.setImageDrawable(ContextCompat.getDrawable(ReminderActivity.this, R.drawable.ic_walking_with_dog));
+                taskDescription.setText("Go for a 30 min jog with the dog");
+                taskTime.setText("11:20, 22 Sept 2019");
+                writeGetData("11:20, 22 Sept 2019", "walking", "Go for a 30 min jog with the dog");
+            }
+        });
+
         recyclerView.setLayoutManager(new LinearLayoutManager(MedicalHistory.this));
         medicalAdapter = new MedicalAdapter(medicalRecords);
         recyclerView.setAdapter(medicalAdapter);

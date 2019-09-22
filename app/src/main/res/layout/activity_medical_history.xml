@@ -28,4 +28,13 @@
         android:layout_margin="6dp"
         android:id="@+id/recycler_view"/>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButto
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="12dp"
+            android:src="@drawable/ic_add"
+            android:id="@+id/plus_btn2"/>
+
 </LinearLayout>

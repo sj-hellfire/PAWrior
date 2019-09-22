@@ -1,15 +1,12 @@
 package com.example.pawrior.auth;
 
+import android.widget.*;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
 import com.example.pawrior.MainActivity;
 import com.example.pawrior.Pawrior;
@@ -70,6 +67,8 @@ public class SignUpProfileActivity extends AppCompatActivity {
                         dogGenderBool
                 );
                 Pawrior.myDog = dog;
+//                TextView navDrawerTitle = findViewById(R.id.dogName);
+//                navDrawerTitle.setText(dogFirstName + " " + dogSecondName);
                 databaseReference.push().setValue(dog);
                 startActivity(new Intent(SignUpProfileActivity.this, MainActivity.class));
             }
