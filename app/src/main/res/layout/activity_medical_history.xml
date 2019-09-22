@@ -23,12 +23,13 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="6dp"
-        android:id="@+id/recycler_view"/>
+            android:layout_width="match_parent"
+            android:layout_height="517dp"
+            android:layout_margin="6dp"
+            android:layout_marginBottom="48dp"
+            android:id="@+id/recycler_view"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButto
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

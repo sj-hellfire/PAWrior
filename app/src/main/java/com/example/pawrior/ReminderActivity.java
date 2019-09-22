@@ -1,25 +1,26 @@
 package com.example.pawrior;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
 import android.app.AlarmManager;
 import android.app.Dialog;
+import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.BitmapDrawable;
+import android.media.RingtoneManager;
 import android.os.Bundle;
+import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Calendar;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ReminderActivity extends AppCompatActivity {
 
@@ -27,6 +28,32 @@ public class ReminderActivity extends AppCompatActivity {
     TextView taskTime, taskDescription;
     FloatingActionButton fab;
     Dialog activityPopup;
+
+    public void scheduleNotification(Context context, long delay, int notificationId) {//delay is after how much time(in millis) from current time you want to schedule the notification
+        Log.e("entered Notifier", "xyz");
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
+                .setContentTitle("PAWrior - Time to Walk")
+                .setContentText("Time to walk your pet!")
+                .setAutoCancel(true)
+                .setSmallIcon(R.drawable.app_logo).setChannelId("my_channel_01")
+                .setLargeIcon(((BitmapDrawable) context.getResources().getDrawable(R.drawable.app_logo)).getBitmap())
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
+
+        Intent intent = new Intent(context, ReminderActivity.class);
+        PendingIntent activity = PendingIntent.getActivity(context, notificationId, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+        builder.setContentIntent(activity);
+
+        Notification notification = builder.build();
+
+        Intent notificationIntent = new Intent(context, NotificationAlert.class);
+        notificationIntent.putExtra(NotificationAlert.NOTIFICATION_ID, notificationId);
+        notificationIntent.putExtra(NotificationAlert.NOTIFICATION, notification);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, notificationId, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+        long futureInMillis = SystemClock.elapsedRealtime() + delay;
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, futureInMillis, pendingIntent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +67,7 @@ public class ReminderActivity extends AppCompatActivity {
         taskImage = findViewById(R.id.activity_image);
         taskTime = findViewById(R.id.activity_time);
         taskDescription = findViewById(R.id.activity_description);
+        scheduleNotification(this, 2000, 8080);
         if(!(event.equals("none"))){
             taskTime.setText(time);
             taskDescription.setText(desc);
