@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    tools:context=".auth.OTPActivity"
+    android:background="@color/colorPrimaryDark">
+
+    <ImageView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/app_logo"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/app_logo"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/app_logo"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="PAWRIOR"
+        android:textColor="@android:color/white"
+        android:textSize="60dp"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+
+        <TextView
+            android:textSize="24dp"
+            android:textColor="#fff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter 4 digit OTP"
+            android:layout_marginBottom="24dp"
+            android:textAlignment="center" />
+
+        <com.mukesh.OtpView
+            app:itemRadius="12dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:id="@+id/otp_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:inputType="number"
+            app:itemCount="4"
+            android:itemBackground="#FFF"
+            app:lineColor="#C6C6C6"
+            app:itemSpacing="12dp"
+            app:state_filled="true" />
+
+
+
+        <Button
+            android:id="@+id/otp_verify_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginVertical="60dp"
+            android:text="VERIFY"
+            android:layout_marginHorizontal="25dp"
+            android:background="@drawable/round_bg"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

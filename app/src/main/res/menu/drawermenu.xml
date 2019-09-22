@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/vet_locator" android:title="Vet Locator" android:icon="@drawable/ic_doctor"/>
+    <item android:id="@+id/my_groomer" android:title="My Groomer" android:icon="@drawable/ic_makeover"/>
+    <item android:id="@+id/look_around" android:title="Look Around" android:icon="@drawable/ic_search_black_24dp"/>
+    <item android:id="@+id/pet_map" android:title="Pet Map" android:icon="@drawable/ic_map_black_24dp"/>
+    <item android:id="@+id/my_pet_friends" android:title="My Friends" android:icon="@drawable/ic_friend"/>
+
+</menu>

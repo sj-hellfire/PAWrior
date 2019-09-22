@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".auth.SignUpProfileActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root_layout"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Tell us about your dog"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:layout_margin="12dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"/>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:id="@+id/profile_photo"
+        android:scaleType="centerCrop"
+        android:src="@drawable/example_profile_pic"/>
+
+
+    <EditText
+        android:id="@+id/dog_name_first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="DOG'S FIRST NAME"
+        android:layout_margin="12dp"/>
+    <EditText
+        android:id="@+id/dog_name_second"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="DOG'S SECOND NAME"
+        android:layout_margin="12dp"/>
+    <EditText
+        android:id="@+id/dog_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="AGE"
+        android:inputType="number"
+        android:layout_margin="12dp"/>
+    <RadioGroup
+        android:layout_margin="12dp"
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/male"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Male" />
+
+        <RadioButton
+            android:id="@+id/female"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Female" />
+    </RadioGroup>
+    <EditText
+        android:id="@+id/dog_breed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="DOG BREED"
+        android:layout_margin="12dp"/>
+    <EditText
+        android:id="@+id/dog_weight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="WEIGHT"
+        android:inputType="number"
+        android:layout_margin="12dp"/>
+    <EditText
+        android:id="@+id/owner_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="OWNER NAME"
+        android:layout_margin="12dp"/>
+    <EditText
+        android:id="@+id/owner_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="OWNER EMAIL"
+        android:layout_margin="12dp"/>
+    <EditText
+        android:id="@+id/owner_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="OWNER PHONE"
+        android:inputType="number"
+        android:layout_margin="12dp"/>
+
+    <Button
+        android:id="@+id/submit_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginVertical="30dp"
+        android:text="VERIFY"
+        android:textColor="@android:color/white"
+        android:layout_marginHorizontal="25dp"
+        android:background="@drawable/round_bg"
+        android:backgroundTint="@color/colorPrimaryDark"/>
+
+</LinearLayout>
+</ScrollView>

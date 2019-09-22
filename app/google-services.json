@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "300001840570",
+    "firebase_url": "https://pawrior-d5faf.firebaseio.com",
+    "project_id": "pawrior-d5faf",
+    "storage_bucket": "pawrior-d5faf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:300001840570:android:c0f803279f4336c1c56183",
+        "android_client_info": {
+          "package_name": "com.example.pawrior"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "300001840570-rnonds2itd98ogpjbahi2ef9a5klimm5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMrvxtGdGxwvljyt9D3xhS_4WqQd785mQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "300001840570-rnonds2itd98ogpjbahi2ef9a5klimm5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
